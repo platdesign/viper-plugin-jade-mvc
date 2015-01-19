@@ -1,0 +1,17 @@
+{
+  "name": "viper-plugin-jade-mvc",
+  "version": "1.0.0",
+  "description": "viper-plugin-jade-mvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.10.7",
+    "extend": "^2.0.0",
+    "jade": "^1.8.2",
+    "q": "^1.1.2"
+  }
+}
