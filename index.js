@@ -59,13 +59,6 @@ module.exports = function() {
 
 		});
 
-		// Not found middleware
-		that.run(function(router) {
-			router.use(function(req, res) {
-				res.redirect('/');
-			});
-		});
-
 	}
 
 };
@@ -154,7 +147,6 @@ function dir2router(dir) {
 
 		subFolders.forEach(function(dir) {
 			var resourceName = path.basename(dir);
-			console.log(resourceName);
 
 
 			if(resourceName.substr(0, 1) === defaults.paramPrefix) {
