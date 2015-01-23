@@ -29,8 +29,8 @@ module.exports = function() {
 	var that = this;
 
 
-	this.config(function(router) {
-		router.engine('.jade', jade.__express);
+	this.config(function(app) {
+		app.engine('.jade', jade.__express);
 	});
 
 
@@ -104,14 +104,14 @@ function dir2router(dir) {
 						res: res,
 						params: req[defaults.reqParamsAttr]
 					}).then(function(result) {
-
-						resolvePromiseObject(result || {})
-						.then(function(scope) {
-							req.scope = req.scope || {};
-							extend(true, req.scope, scope);
-							next();
-						});
-
+						if(result !== false) {
+							resolvePromiseObject(result || {})
+							.then(function(scope) {
+								req.scope = req.scope || {};
+								extend(true, req.scope, scope);
+								next();
+							});
+						}
 					});
 
 				}]);
