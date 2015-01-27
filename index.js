@@ -29,15 +29,17 @@ module.exports = function() {
 	var that = this;
 
 
+	var baseDir = this.cwd();
+
 	this.config(function(app) {
 		app.engine('.jade', jade.__express);
+		app.locals.basedir = baseDir;
 	});
-
-
 
 
 	if( this._config[defaults.configId] ) {
 		var config = this._config[defaults.configId];
+
 
 
 		// Walk config and create api-routes for each item
