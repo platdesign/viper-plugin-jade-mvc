@@ -1,6 +1,6 @@
 {
   "name": "viper-plugin-jade-mvc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "viper-plugin-jade-mvc",
   "main": "index.js",
   "scripts": {
